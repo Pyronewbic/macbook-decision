@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MacBook Pro 16": M5 Pro 48GB vs M4 Max 64GB — buying decision</title>
+<meta name="description" content="A calibrated 2026 buying decision between the 16-inch MacBook Pro M5 Pro 48GB and M4 Max 64GB — benchmark charts, pricing, and where to buy.">
+<meta property="og:title" content="MacBook Pro 16: M5 Pro 48GB vs M4 Max 64GB">
+<meta property="og:description" content="Benchmark charts, pricing, and a decision framework for a dev-plus-local-AI machine.">
+</head>
+<body>
+<style>
+  :root {
+    --ground: #F1F3F2;
+    --panel: #FBFCFB;
+    --panel-2: #E9ECEA;
+    --line: #D5D9D6;
+    --line-strong: #BFC4C1;
+    --ink: #161A19;
+    --graphite: #3F4644;
+    --aluminum: #6E7572;
+    --petrol: #0C6B66;
+    --petrol-dk: #094f4b;
+    --petrol-tint: #D6E6E4;
+    --good: #2E7D57;
+    --good-tint: #DDECE3;
+    --warn: #9C6C15;
+    --warn-tint: #F0E6CE;
+    --avoid: #A9483A;
+    --avoid-tint: #F0DAD5;
+    --gold: #8A6D1F;
+    --gold-tint: #F3EAD1;
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+    --maxw: 1120px;
+    --r: 10px;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .eyebrow { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--petrol); margin: 0; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -0.02em; line-height: 1.05; font-weight: 640; }
+  h2 { font-size: clamp(22px, 3.2vw, 27px); letter-spacing: -0.015em; font-weight: 620; }
+  h3 { font-size: 18px; letter-spacing: -0.01em; font-weight: 620; }
+  a { color: var(--petrol-dk); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; border-radius: 3px; }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+  header { border-bottom: 1px solid var(--line); background: linear-gradient(180deg, #FBFCFB, var(--ground)); }
+  .head-inner { padding: 46px 24px 40px; max-width: var(--maxw); margin: 0 auto; }
+  .head-inner h1 { margin-top: 12px; max-width: 22ch; }
+  .thesis { margin: 18px 0 0; font-size: 17px; color: var(--graphite); max-width: 64ch; }
+  .thesis strong { color: var(--ink); font-weight: 600; }
+
+  section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: 0; }
+  .sec-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 26px; }
+  .sec-head p { margin: 0; color: var(--aluminum); max-width: 64ch; }
+
+  /* alert band */
+  .alerts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .alerts { grid-template-columns: 1fr; } }
+  .alert { border-radius: var(--r); padding: 18px 20px; border: 1px solid; }
+  .alert .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .alert h3 { font-size: 16px; margin-bottom: 6px; }
+  .alert p { margin: 0; font-size: 13.5px; }
+  .alert.hike { background: var(--avoid-tint); border-color: #E4C4BC; }
+  .alert.hike .k, .alert.hike h3 { color: var(--avoid); }
+  .alert.hike p { color: #7c3a2e; }
+  .alert.perk { background: var(--good-tint); border-color: #BFDDCB; }
+  .alert.perk .k, .alert.perk h3 { color: var(--good); }
+  .alert.perk p { color: #24603f; }
+
+  .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .rec-grid { grid-template-columns: 1fr; } }
+  .rec { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; position: relative; overflow: hidden; }
+  .rec::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--petrol); }
+  .rec .flag { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aluminum); }
+  .rec h3 { margin: 6px 0 8px; }
+  .rec .pick { color: var(--petrol-dk); }
+  .rec p { margin: 0; color: var(--graphite); font-size: 14.5px; }
+  .rec .why { margin-top: 12px; font-size: 13.5px; color: var(--aluminum); }
+
+  .bw { display: flex; flex-direction: column; gap: 16px; }
+  .bw-row { display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: center; }
+  @media (max-width: 640px) { .bw-row { grid-template-columns: 1fr; gap: 6px; } }
+  .bw-label { display: flex; flex-direction: column; }
+  .bw-label .name { font-weight: 600; }
+  .bw-label .sub { font-size: 12.5px; color: var(--aluminum); }
+  .bar-track { background: var(--panel-2); border-radius: 6px; height: 32px; position: relative; overflow: hidden; border: 1px solid var(--line); }
+  .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px 0 0 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: #fff; font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .bar-fill.hero { background: linear-gradient(90deg, var(--petrol-dk), var(--petrol)); }
+  .bar-fill.low { background: #93A7A4; }
+  .bar-fill.lowest { background: #A9B6B3; }
+  .bw-note { font-size: 13.5px; color: var(--aluminum); margin-top: 6px; }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; min-width: 780px; }
+  thead th { text-align: left; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--aluminum); font-weight: 500; padding: 14px 16px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; }
+  tbody td { padding: 15px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: 0; }
+  .cfg-name { font-weight: 600; }
+  .cfg-name .spec { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--aluminum); font-weight: 400; margin-top: 3px; letter-spacing: 0; }
+  .price { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 14.5px; white-space: nowrap; }
+  .price .street { display: block; font-size: 12px; color: var(--good); margin-top: 2px; }
+  .price .na { color: var(--aluminum); }
+  .price .net { display: block; font-size: 12px; color: var(--gold); margin-top: 2px; }
+  td.hl { background: #FCFAF1; }
+
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; display: flex; flex-direction: column; gap: 13px; transition: transform .18s ease, box-shadow .18s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px -18px rgba(20,26,25,.4); }
+  .card .cardtop { display: flex; flex-direction: column; gap: 4px; }
+  .card h3 { font-size: 16.5px; }
+  .card h3 .spec { display: block; font-family: var(--font-mono); font-size: 11.5px; color: var(--aluminum); font-weight: 400; margin-top: 4px; }
+  .verdict { align-self: flex-start; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 8px; border-radius: 100px; }
+  .v-good { background: var(--good-tint); color: var(--good); }
+  .v-warn { background: var(--warn-tint); color: var(--warn); }
+  .v-mid { background: var(--petrol-tint); color: var(--petrol-dk); }
+  .v-budget { background: var(--panel-2); color: var(--graphite); }
+  .pc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+  .pc li { display: grid; grid-template-columns: 14px 1fr; gap: 7px; color: var(--graphite); }
+  .pc .sym { font-family: var(--font-mono); font-weight: 700; }
+  .pc .plus .sym { color: var(--good); }
+  .pc .minus .sym { color: var(--avoid); }
+  .card .bottomline { margin-top: auto; font-size: 12.5px; color: var(--aluminum); border-top: 1px solid var(--line); padding-top: 11px; }
+
+  /* discount scenarios */
+  .branch { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 760px) { .branch { grid-template-columns: 1fr; } }
+  .br { border: 1px solid var(--line); border-radius: var(--r); padding: 22px; background: var(--panel); }
+  .br.epp { border-top: 3px solid var(--good); }
+  .br.ff { border-top: 3px solid var(--gold); }
+  .br .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .br.epp .tag { color: var(--good); }
+  .br.ff .tag { color: var(--gold); }
+  .br h3 { margin: 6px 0 4px; }
+  .br .cond { font-size: 13px; color: var(--aluminum); margin: 0 0 14px; }
+  .nettab { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .nettab li { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; padding-bottom: 7px; border-bottom: 1px dashed var(--line); }
+  .nettab li:last-child { border-bottom: 0; }
+  .nettab .lab { color: var(--graphite); }
+  .nettab .val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .nettab .win .val { color: var(--good); }
+  .nettab .win .lab { color: var(--ink); font-weight: 600; }
+  .br .verdict-line { font-size: 13.5px; font-weight: 600; }
+  .br.epp .verdict-line { color: var(--good); }
+  .br.ff .verdict-line { color: var(--gold); }
+
+  .checklist { background: var(--gold-tint); border: 1px solid #E2D3A8; border-radius: var(--r); padding: 20px 22px; margin-top: 22px; }
+  .checklist h3 { color: var(--gold); font-size: 16px; margin-bottom: 10px; }
+  .checklist ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .checklist li { color: #5f4c17; font-size: 14px; }
+  .checklist li strong { color: #3f330f; }
+
+  .frame { display: flex; flex-direction: column; }
+  .frame .step { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+  .frame .step:last-child { border-bottom: 0; }
+  .frame .num { font-family: var(--font-mono); font-size: 13px; color: var(--petrol); font-weight: 700; padding-top: 2px; }
+  .frame .step h3 { font-size: 15.5px; margin-bottom: 4px; }
+  .frame .step p { margin: 0; color: var(--graphite); font-size: 13.5px; }
+  .frame .step p .tag { font-family: var(--font-mono); font-size: 12px; color: var(--aluminum); }
+
+  .patterns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .patterns { grid-template-columns: 1fr; } }
+  .pat { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--petrol); border-radius: 8px; padding: 15px 18px; }
+  .pat h3 { font-size: 14.5px; margin-bottom: 5px; }
+  .pat p { margin: 0; font-size: 13px; color: var(--graphite); }
+
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .cmp { grid-template-columns: 1fr; } }
+  .cmp-col { border: 1px solid var(--line); border-radius: var(--r); padding: 20px; background: var(--panel); }
+  .cmp-col h3 { font-size: 15px; margin-bottom: 12px; }
+  .cmp-col ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 9px; }
+  .cmp-col li { font-size: 13.5px; color: var(--graphite); }
+  .cmp-col.dim { background: var(--panel-2); }
+  .cmp-col.dim h3 { color: var(--aluminum); }
+  .cmp-col.hot { border-top: 3px solid var(--petrol); }
+  .cmp-col.hot h3 { color: var(--petrol-dk); }
+
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  @media (max-width: 720px) { .links { grid-template-columns: 1fr; } }
+  .linkcol .geo { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aluminum); }
+  .linkgroup { margin-top: 16px; }
+  .linkgroup .gl { font-weight: 600; font-size: 13.5px; margin-bottom: 6px; }
+  .linkgroup ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .linkgroup li { font-size: 13.5px; display: flex; gap: 8px; }
+  .linkgroup li::before { content: "→"; color: var(--petrol); font-family: var(--font-mono); }
+
+  .callout { background: var(--petrol-tint); border: 1px solid #B9D6D3; border-radius: var(--r); padding: 18px 20px; margin-top: 22px; }
+  .callout strong { color: var(--petrol-dk); }
+  .callout p { margin: 0; font-size: 14px; color: var(--graphite); }
+
+  footer { padding: 34px 0 60px; color: var(--aluminum); font-size: 12.5px; }
+  footer .wrap { display: flex; flex-direction: column; gap: 8px; }
+  footer code { font-family: var(--font-mono); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  .fade { opacity: 0; transform: translateY(8px); animation: rise .5s ease forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; animation: none; } }
+</style>
+
+<header>
+  <div class="head-inner fade">
+    <p class="eyebrow">Buying decision · MacBook Pro 16" · local-AI dev machine</p>
+    <h1>The real fork: M5 Pro 48GB vs M4 Max 64GB</h1>
+    <p class="thesis">
+      Your local k8s is lightweight (testing only — real workloads run in the cloud), so it fits in 48GB alongside your services + Docker. <strong>64GB isn't needed for dev</strong>, and on the M5 Pro it would only serve the local AI you've said is secondary.
+      So it's <strong>M5 Pro 48GB nano (dev-first, ~$2,810)</strong> vs <strong>M4 Max 64GB nano (AI-first, ~$3,130)</strong> — a genuine ~$320 premium you pay only if local AI becomes routine.
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="alerts">
+      <div class="alert hike">
+        <span class="k">What changed · pricing</span>
+        <h3>Memory-shortage hike (late June 2026)</h3>
+        <p>M5 Pro/Max bases up 13-15%; RAM &amp; SSD upgrades up 50-67% (64/128GB nearly doubled). M5 Pro 16"/48GB went from ~$3,099 to ~$3,599. Pre-hike stock at retailers is the deal, and it's selling out. Older-priced Apple <em>refurb</em> M4 units are now relatively better value.</p>
+      </div>
+      <div class="alert perk">
+        <span class="k">Confirmed · your leverage</span>
+        <h3>Personal EPP — the strong one</h3>
+        <p>~25% off new <em>and</em> ~28% off retail on Certified Refurbished, US store, no annual slot used. This is the best-case discount — it covers refurbished, which is exactly where the value M4 Max stock lives. Friends &amp; Family (~15%, new-only) is ruled out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The pick · 48GB is right-sized</p>
+      <h2>M5 Pro 48GB (dev-first) vs M4 Max 64GB (AI-first)</h2>
+      <p>Lightweight local k8s + cloud for real workloads means 48GB fits your dev day. 64GB only earns its keep for local AI — secondary for you. Both 16", nano, Space Black, on your US contact's EPP.</p>
+    </div>
+    <div class="rec-grid">
+      <div class="rec">
+        <span class="flag">Dev-first · new BTO · net ≈ $2,810 · recommended</span>
+        <h3><span class="pick">MacBook Pro 16" · M5 Pro 48GB · nano · Space Black</span></h3>
+        <p>Right-sized 48GB — lightweight k8s + 4 services + Docker + testcontainers all fit, heavy workloads are in the cloud. Newest gen, ~12% faster CPU for builds, configured exactly, in stock today, longest support, and ~$320 cheaper. Local AI still runs ~20-28 tok/s: fine for occasional use.</p>
+        <p class="why">The clear pick for your workload — dev-first, AI secondary.</p>
+      </div>
+      <div class="rec">
+        <span class="flag">AI-first · refurb · net ≈ $3,130 · +~$320</span>
+        <h3><span class="pick">MacBook Pro 16" · M4 Max 64GB · nano · Space Black</span></h3>
+        <p>~1.8× faster local AI (546 GB/s, 40-core) + 64GB for 70B-class. The premium buys AI capability you only cash in if local models become routine. Trade-offs: ~12% slower CPU, a generation older, and the rarest refurb combo — you wait for stock.</p>
+        <p class="why">Only if local AI graduates from experiment to daily habit.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>Where it lands:</strong> with real workloads in the cloud and local AI secondary, nothing in your day needs 64GB — so the M5 Pro 48GB at ~$2,810 is right-sized, newest, faster for builds, and ~$320 cheaper. The M4 Max 64GB is a deliberate ~$320 bet that local AI becomes routine. Either way, bought in the US on your US contact's EPP login.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Will the Max pay off?</p>
+      <h2>The 64GB question, decided by one honest read</h2>
+      <p>The Max is plainly the better local-AI machine. Whether it's worth ~$320 to you turns on whether your shift away from frontier is a plan or a vibe.</p>
+    </div>
+    <div class="cmp">
+      <div class="cmp-col hot">
+        <h3>What the Max 64GB concretely unlocks</h3>
+        <ul>
+          <li><strong>70B-class models fit comfortably</strong> — 48GB runs them cramped, 64GB gives usable context + always-resident. Noticeably sharper reasoning than 30B.</li>
+          <li><strong>~1.8× faster generation</strong> — 30B ~36-50 tok/s (vs ~20-28), 70B ~15-20 (vs ~8-12). Daily use feels pleasant; local agentic loops become viable.</li>
+          <li><strong>Faster prefill</strong> — long-context RAG over your notes chews through quicker.</li>
+        </ul>
+      </div>
+      <div class="cmp-col dim">
+        <h3>The ceiling that stays either way</h3>
+        <ul>
+          <li>A local 70B still <strong>won't match frontier</strong> on hard multi-file reasoning or subtle bugs. The Max widens the band local handles well — it doesn't cut the Claude cord.</li>
+          <li>The best local <em>coding</em> model (Qwen3-Coder-30B) already runs great on 48GB — autocomplete isn't where the Max pulls far ahead.</li>
+          <li>Both are limited to augmentation-grade local AI; the difference is <em>how much</em> augmentation, not a leap to frontier parity.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:20px">
+      <p><strong>Your two goals split across the two machines.</strong> "Do more thinking myself" is better served by the <em>weaker</em> 48GB — a model you can't fully trust keeps you the architect. "Less reliant on frontier" is what the Max enables — replacing Claude on more tasks needs the most capable local model you can run, fast. Same instinct, opposite hardware.</p>
+    </div>
+    <div class="rec-grid" style="margin-top:18px">
+      <div class="rec">
+        <span class="flag">If the shift is durable &amp; central</span>
+        <h3><span class="pick">→ Max 64GB</span></h3>
+        <p>You'll run a local model most days, push toward 70B, build local agent workflows. The ~$320 (~$70/yr over 4-5 years) is cheap insurance against feeling capped daily.</p>
+        <p class="why">Trade-off: it's refurb-only, so you wait for the right unit.</p>
+      </div>
+      <div class="rec">
+        <span class="flag">If you're excited but unproven</span>
+        <h3><span class="pick">→ M5 Pro 48GB</span></h3>
+        <p>You think you'll shift, but you've been frontier-first for years. It runs the full augmentation stack well, keeps you honestly in "think it through myself" mode, and won't stop you building the habit.</p>
+        <p class="why">Add an external SSD later; revisit the Max if local AI truly takes over.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:18px">
+      <p><strong>The gut check:</strong> is "I'll run local models daily" a plan or a vibe? A real plan → buy the Max and don't look back. Not sure → the M5 Pro is the lower-regret bet, and you'll <em>know</em> within a few months whether the shift is real.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The core tradeoff · two benchmarks, opposite winners</p>
+      <h2>M4 Max wins AI bandwidth; M5 Pro wins CPU</h2>
+      <p>The whole decision in two charts. Token generation is bandwidth-bound (chart 1); builds and tests are CPU-bound (chart 2). Each machine wins one — in each chart the accent bar is the winner.</p>
+    </div>
+    <p class="eyebrow" style="margin-bottom:12px">1 · Local-AI speed = memory bandwidth · higher is better</p>
+    <div class="bw">
+      <div class="bw-row">
+        <div class="bw-label"><span class="name">M4 Max · 40-core GPU</span><span class="sub">64GB build</span></div>
+        <div class="bar-track"><div class="bar-fill hero" style="width:100%">546 GB/s</div></div>
+      </div>
+      <div class="bw-row">
+        <div class="bw-label"><span class="name">M5 Pro · 20-core GPU</span><span class="sub">current gen</span></div>
+        <div class="bar-track"><div class="bar-fill low" style="width:56.2%">307 GB/s</div></div>
+      </div>
+    </div>
+    <p class="bw-note">The M4 Max moves ~1.8× the data of the M5 Pro — that's the ~1.8× local-AI generation gap you'd feel. (For reference, an M5 Max hits 614 GB/s, the only clear step up, at a much higher price.)</p>
+
+    <p class="eyebrow" style="margin:34px 0 12px">2 · Dev speed = CPU · Geekbench 6 multi-core · higher is better</p>
+    <div class="bw">
+      <div class="bw-row">
+        <div class="bw-label"><span class="name">M5 Pro · 18-core CPU</span><span class="sub">same CPU as M5 Max</span></div>
+        <div class="bar-track"><div class="bar-fill hero" style="width:100%">≈29,200</div></div>
+      </div>
+      <div class="bw-row">
+        <div class="bw-label"><span class="name">M4 Max · 16-core CPU</span><span class="sub">a generation older</span></div>
+        <div class="bar-track"><div class="bar-fill low" style="width:88%">≈25,700</div></div>
+      </div>
+    </div>
+    <p class="bw-note">Flipped: the <strong>M5 Pro wins CPU by ~14% multi-core</strong> (~10% single-core) — it ships the full 18-core, identical to the M5 Max, so paying up to a Max buys <em>zero</em> extra CPU. But ~14% is imperceptible day-to-day (a 20s build → ~17s), and both are far past "enough" for your NestJS + Docker + k8s stack. Net: <strong>the Max wins the AI chart, the M5 Pro wins the dev chart</strong> — pick by which one you'll actually feel.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The matrix</p>
+      <h2>Price by config, condition &amp; region</h2>
+      <p>All 16", 1TB, Space Black. US figures are post-hike (mid-2026). Gold = net after the ~28% EPP-on-refurb / 25%-on-new discount, where it applies. Verify every number live.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>Bandwidth</th>
+            <th>US — new (post-hike)</th>
+            <th>US — Apple refurb</th>
+            <th>India — new</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cfg-name">M5 Pro · 48GB<span class="spec">20-core GPU · current gen</span></td>
+            <td class="price">307 GB/s</td>
+            <td class="price hl">$3,599 <span class="net">≈$2,699 w/ EPP (25% new)</span></td>
+            <td class="price"><span class="na">— too new</span></td>
+            <td class="price">₹3,39,900 <span class="street">→ ~₹3.8L hike incoming; grab current price</span></td>
+          </tr>
+          <tr>
+            <td class="cfg-name">M4 Max · 64GB<span class="spec">40-core GPU</span></td>
+            <td class="price">546 GB/s</td>
+            <td class="price">~$4,199</td>
+            <td class="price hl">~$3,569 <span class="net">≈$3,020 w/ EPP</span></td>
+            <td class="price"><span class="na">scarce BTO</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>The headline (corrected):</strong> EPP is ~28% off <em>retail</em> on refurb, landing the M4 Max 64GB near ~$3,020 — a real premium over the EPP'd M5 Pro 48GB (~$2,699), not below it. The discount doesn't invert the ranking; the Max still costs more, and you pay that difference specifically for local-AI bandwidth + RAM. Add ~$110 to each for nano-texture.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Confirmed path</p>
+      <h2>Your discount is Scenario A</h2>
+      <p>Personal EPP, US, no slot used — the refurb stack is live. Here's the net math (Friends &amp; Family shown only to confirm it's ruled out), then how to execute.</p>
+    </div>
+    <div class="branch">
+      <div class="br epp">
+        <span class="tag">✓ Your path · Employee (EPP)</span>
+        <h3>~25% new · ~28% on refurb</h3>
+        <p class="cond">Their personal allowance, their account, annual limits apply. Covers current + refurbished models.</p>
+        <ul class="nettab">
+          <li class="win"><span class="lab">M5 Pro 48GB new · nano ≈$2,810</span><span class="val">≈$2,699</span></li>
+          <li><span class="lab">M4 Max 64GB refurb · nano ≈$3,130</span><span class="val">≈$3,020</span></li>
+        </ul>
+        <p class="verdict-line">→ Cheapest that fits your dev: M5 Pro 48GB. Max 64GB = +~$320 for AI.</p>
+      </div>
+      <div class="br ff" style="opacity:.5">
+        <span class="tag">✕ Ruled out · Friends &amp; Family</span>
+        <h3>~15% · new products only</h3>
+        <p class="cond">Shareable ~3×/year. Usually excludes Certified Refurbished and clearance — so the M4 refurb deals don't apply.</p>
+        <ul class="nettab">
+          <li class="win"><span class="lab">M5 Pro 48GB new</span><span class="val">≈$3,059</span></li>
+          <li><span class="lab">M4 Max 64GB new</span><span class="val">≈$3,569</span></li>
+          <li><span class="lab">M4 Max 64GB refurb</span><span class="val">no discount</span></li>
+        </ul>
+        <p class="verdict-line">→ M5 Pro 48GB new wins: newest, and F&amp;F only helps new stock.</p>
+      </div>
+    </div>
+    <div class="checklist">
+      <h3>How to execute — the refurb-stock play</h3>
+      <ol>
+        <li><strong>They buy it, on their EPP login.</strong> The order runs through their US employee account and name; settle up with them directly. Ships to a US address.</li>
+        <li><strong>Check their EPP portal actually lists Certified Refurbished.</strong> Most do, with the extra ~17% on top. A few EPP stores are new-only — if so, the M4 Max 64GB isn't reachable, so fall back to the M5 Pro 48GB new at 25%.</li>
+        <li><strong>Stalk the exact SKU.</strong> 16" M4 Max, 16-core CPU / 40-core GPU, 64GB, 1TB, Space Black — a specific refurb unit that rotates in and out of stock. Check daily; buy the day it appears.</li>
+        <li><strong>Add AppleCare+ through EPP too.</strong> Usually discounted under EPP and worth it on a $2,500+ machine you'll keep 4-5 years.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Pros &amp; cons</p>
+      <h2>The two contenders</h2>
+      <p>Weighted for a backend-microservices workload (RAM/CPU-bound, GPU idle) plus the local-AI ambition (bandwidth + RAM ceiling).</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="cardtop"><span class="verdict v-good">Dev-first pick</span><h3>M5 Pro · 48GB<span class="spec">307 GB/s · 20c GPU</span></h3></div>
+        <ul class="pc">
+          <li class="plus"><span class="sym">+</span><span>~12% faster CPU for builds (full 18-core)</span></li>
+          <li class="plus"><span class="sym">+</span><span>48GB right-sized: lightweight k8s + stack fit; cloud for the rest</span></li>
+          <li class="plus"><span class="sym">+</span><span>New BTO: nano + exact config; cheapest finalist</span></li>
+          <li class="plus"><span class="sym">+</span><span>3 displays via one dock; Wi-Fi 7; longest support</span></li>
+          <li class="minus"><span class="sym">–</span><span>~1.8× slower local AI (still usable, ~20-28 tok/s)</span></li>
+        </ul>
+        <p class="bottomline">The pick if local AI stays secondary — your best buy.</p>
+      </div>
+      <div class="card">
+        <div class="cardtop"><span class="verdict v-warn">AI-first · +~$320</span><h3>M4 Max · 64GB<span class="spec">546 GB/s · 40c GPU</span></h3></div>
+        <ul class="pc">
+          <li class="plus"><span class="sym">+</span><span>~1.8× faster local generation; 40 GPU cores</span></li>
+          <li class="plus"><span class="sym">+</span><span>64GB fits 70B beside Docker + 4 services</span></li>
+          <li class="minus"><span class="sym">–</span><span>~$3,130 nano — a real premium, not cheaper</span></li>
+          <li class="minus"><span class="sym">–</span><span>~12% slower CPU; a generation older</span></li>
+          <li class="minus"><span class="sym">–</span><span>Rarest refurb combo; you wait for stock</span></li>
+        </ul>
+        <p class="bottomline">Worth the premium only if local AI becomes routine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Your dev-specific questions</p>
+      <h2>M4 vs M5 for dev, Thunderbolt, display &amp; storage</h2>
+      <p>Short version: for your NestJS-monorepo work, almost none of the generational specs matter — only local AI does. The breakdown, so you can stop wondering.</p>
+    </div>
+    <div class="cmp">
+      <div class="cmp-col dim">
+        <h3>Barely differs — don't decide on these</h3>
+        <ul>
+          <li><strong>Build / CPU speed:</strong> M5 Pro is ~11-15% faster (it got the full 18-core, same as M5 Max). Real but imperceptible — a 20s build becomes ~17s. Both obliterate Docker + testcontainers + tsc.</li>
+          <li><strong>Thunderbolt 5:</strong> identical — 3× TB5 up to 120Gbps. TB5 debuted on the M4 Max in 2024; it is <em>not</em> an M5 feature.</li>
+          <li><strong>Display panel:</strong> identical mini-LED Liquid Retina XDR. Nano-texture is a $150 option on <em>both</em>.</li>
+          <li><strong>Chassis, ports, webcam, speakers, keyboard:</strong> unchanged between the two.</li>
+        </ul>
+      </div>
+      <div class="cmp-col hot">
+        <h3>Genuinely differs</h3>
+        <ul>
+          <li><strong>Local-AI throughput:</strong> M4 Max 546 GB/s + 40 GPU cores vs M5 Pro 307 GB/s + 20. ~1.8× generation speed — the only axis that truly separates them.</li>
+          <li><strong>3 displays via one dock:</strong> M5 Pro can; M4 Max needs 2 per TB connection. Matters only for a single-dock triple-monitor desk.</li>
+          <li><strong>Efficiency / battery / support:</strong> M5 slightly better, ~1 extra year of macOS updates. Minor over 4-5 years.</li>
+          <li><strong>Wi-Fi:</strong> M5 = Wi-Fi 7, M4 = 6E. Negligible for dev.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:20px">
+      <p><strong>No faster-CPU option exists — you're already at the ceiling.</strong> The M5 Pro comes in two CPU bins: 15-core (5+10) and <strong>18-core (6+12)</strong>. The 16" 48GB config is the 18-core — and that CPU is <em>identical</em> to the M5 Max's. Stepping up to the Max buys GPU + bandwidth + RAM, <strong>zero extra CPU</strong>. So for build speed the 18-core M5 Pro is the fastest MacBook Apple makes this generation (only the desktop Ultra goes higher). Just confirm at checkout it's the 18-core / 20-core-GPU variant, not the binned 15-core.</p>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <p><strong>1TB vs 2TB:</strong> the 1TB→2TB upgrade is now <strong>~$600</strong> post-hike (~$450 even with EPP) — SSD upgrades rose 50-67%. Model weights are big (Qwen3-Coder-30B ≈ 18GB, a 70B 4-bit ≈ 40GB, gpt-oss-120b ≈ 63GB) on top of Docker images and node_modules, so 1TB fills fast if you keep a few models — and on refurb you can't spec storage (most M4 Max refurbs are 1TB). <strong>Smart move: 1TB internal + a Thunderbolt-5 external NVMe</strong> for model weights and Docker volumes — near-internal speed at a fraction of Apple's per-TB cost. Go 2TB internal only for zero-dongle convenience.</p>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <p><strong>The real dev factor is RAM headroom, not CPU generation.</strong> Your stack — lightweight local k8s (test only) + four services + Postgres/Redis/Weaviate in Docker + testcontainers + IDE + Claude Code — fits comfortably in 48GB, since the heavy k8s workloads run in the cloud. 64GB would only be needed to keep a local model resident alongside all that: i.e. for AI, not dev. And nano-texture is a genuine trade for a text-all-day dev: great anti-glare, but glossy is a touch sharper for text — try one in-store first.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How to weight it</p>
+      <h2>After the discount, it's still utilization</h2>
+      <p>The discount sets the price floor; <strong>how much you'll actually use local AI</strong> sets whether you reach for bandwidth (Max) or just capacity (Pro).</p>
+    </div>
+    <div class="rec-grid">
+      <div class="rec">
+        <h3>Local AI ≥ ~20% of use</h3>
+        <p>Private client-code assist, PII-safe batch pipelines (personal data tools), offline RAG on your notes — weekly. → Bandwidth matters. Take the <strong>M4 Max</strong> (64GB if EPP-refurb, else 48GB).</p>
+      </div>
+      <div class="rec">
+        <h3>Local AI &lt; ~10% (experiments)</h3>
+        <p>You'll keep living in Claude Code for real feature work, and heavy k8s runs in the cloud. → 48GB is right-sized; don't pay for AI bandwidth. Take the <strong>M5 Pro 48GB</strong> (~$2,810).</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>The ceiling hasn't moved:</strong> local 30B-class rivals cloud on <em>isolated</em> coding, but multi-file monorepo work, long context, and your Workflow fan-outs still favour Claude. Buy any of these as a <strong>complement</strong> — private / offline / batch — not a Claude replacement.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Methodology</p>
+      <h2>How to draw up a comparison like this</h2>
+      <p>A repeatable frame — the way people who don't over- or under-buy actually decide.</p>
+    </div>
+    <div class="frame">
+      <div class="step"><span class="num">01</span><div><h3>Fix everything that isn't in question</h3><p>Screen, storage, colour — lock them so the table only varies on the real trade-off (here: chip + RAM).</p></div></div>
+      <div class="step"><span class="num">02</span><div><h3>Isolate the single deciding axis</h3><p>Mark which workloads actually differ across configs. Yours: dev work ties; only <span class="tag">local-AI throughput</span> differs. Weight that, stop agonising over the rest.</p></div></div>
+      <div class="step"><span class="num">03</span><div><h3>Score by utilization, not peak capability</h3><p>A 40-core GPU used 5% of the time is a worse buy than 20 cores used daily. Estimate % of use, weight the spec by it.</p></div></div>
+      <div class="step"><span class="num">04</span><div><h3>Model the levers, not the sticker</h3><p>The employee discount and the memory hike each move the price more than the config gap does. Net them out before comparing — as the matrix above does.</p></div></div>
+      <div class="step"><span class="num">05</span><div><h3>Let availability &amp; timing break ties</h3><p>Best config you can't buy (64GB Max in India) loses to the good one in stock. And pre-hike stock is a clock — a deal that expires beats a spec that doesn't.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Norms</p>
+      <h2>What people usually do</h2>
+    </div>
+    <div class="patterns">
+      <div class="pat"><h3>Employee discount → last-gen Max refurb</h3><p>The insider move. EPP's ~28% on refurbished makes a prior-gen Max the runaway value — exactly your Scenario A. Devs with Apple contacts do this routinely.</p></div>
+      <div class="pat"><h3>Buy current-gen Pro, new</h3><p>The "I live in the cloud" default. Newest, quietest, best resale. Where most non-AI-heavy buyers land, and the F&amp;F-only path.</p></div>
+      <div class="pat"><h3>Max out RAM, mid the chip</h3><p>Local-AI folks prioritise unified memory because it sets which models run at all — they'll take 64GB on a cheaper chip over 48GB on a faster one.</p></div>
+      <div class="pat"><h3>Buy the Mac, offload heavy AI</h3><p>Laptop for portability, a Mac mini / used Studio / rented GPU for serious inference. Splits the "one machine does it all" tension.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where to buy</p>
+      <h2>Links, organised by region</h2>
+      <p>With the EPP, start at Apple Refurbished — the discount stacks there. Prices live on these pages.</p>
+    </div>
+    <div class="links">
+      <div class="linkcol">
+        <span class="geo">United States</span>
+        <div class="linkgroup">
+          <div class="gl">Apple Certified Refurbished (EPP stacks here)</div>
+          <ul>
+            <li><a href="https://www.apple.com/shop/refurbished/mac/16-inch-macbook-pro-m4-max">M4 Max 16" — refurb filter (64GB target)</a></li>
+            <li><a href="https://www.apple.com/shop/refurbished/mac/macbook-pro-64gb">64GB MacBook Pro refurb filter</a></li>
+            <li><a href="https://www.apple.com/shop/refurbished/mac/16-inch-macbook-pro">All 16" MacBook Pro refurb</a></li>
+          </ul>
+        </div>
+        <div class="linkgroup">
+          <div class="gl">New / pre-hike stock hunt</div>
+          <ul>
+            <li><a href="https://www.bestbuy.com/product/16-inch-macbook-pro-apple-m5-pro-chip-with-18-core-cpu-and-20-core-gpu-48gb-memory-1tb-ssd-space-black/JJGCQLZKLT/sku/6615872">Best Buy — M5 Pro 48GB (+ open-box tab)</a></li>
+            <li><a href="https://www.bhphotovideo.com/c/search?q=macbook%20pro%2016%20m4%20max%2040-core">B&amp;H — M4 Max 40-core (pre-hike prices linger)</a></li>
+            <li><a href="https://9to5toys.com/2026/06/29/official-price-hikes-amazon-macbook-pro/">9to5Toys — which pre-hike deals remain</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="linkcol">
+        <span class="geo">India · 48GB 16" scarce at retail (checked live)</span>
+        <div class="linkgroup">
+          <div class="gl">Reliable route → Apple India (build-to-order)</div>
+          <ul>
+            <li><a href="https://www.apple.com/in/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-pro-chip-18-core-cpu-20-core-gpu-48gb-memory-1tb-storage">Apple India — configure M5 Pro 16" · 48GB · Space Black; add GSTIN (nano optional here)</a></li>
+          </ul>
+        </div>
+        <div class="linkgroup">
+          <div class="gl">Retail (live check) — stocking 24GB, not 48GB</div>
+          <ul>
+            <li><a href="https://www.croma.com/apple-macbook-pro-16-2-inch-m5-pro-48gb-1tb-macos-tahoe-space-black-/p/318776">Croma — lists the 48GB config, but stock unverifiable (bot-walled); check directly</a></li>
+            <li><a href="https://www.vijaysales.com/p/254013/apple-macbook-pro-m5-pro-chip-24gb-ram-1tb-ssd-16-inch-40-64-cm-liquid-retina-xdr-display-18-core-cpu-20-core-gpu-macos-silver-mge44hn-a">Vijay Sales — 16" M5 Pro in stock but only 24GB (₹2,99,900); watch for a 48GB restock</a></li>
+            <li><a href="https://www.reliancedigital.in/collection/apple-macbook-m5-laptops-251217">Reliance Digital — M5 range live, but only 14" / 24GB found; no 16" 48GB</a></li>
+            <li>APR stores — iStore / Imagine / Unicorn / Aptronix: call to special-order the 48GB</li>
+          </ul>
+        </div>
+        <div class="linkgroup">
+          <div class="gl">Do not settle for 24GB</div>
+          <ul>
+            <li>24GB can't hold your k8s + 4 services + Docker + IDE; 48GB is the floor. If retail only has 24GB, use Apple India BTO for 48GB.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>India's own lever (no employee program there):</strong> buy on a business GSTIN and the 18% GST (~₹53k) is reclaimable — bigger than any bank offer, on a new unit. But if your US contact's discount covers refurb, that ~28% off beats the GST route outright.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Stock watch &amp; SKUs</p>
+      <h2>Exactly what to monitor</h2>
+      <p>The M4 Max is a rotating refurb SKU — set an alert, don't refresh by hand. The M5 Pro is build-to-order — always available, nothing to watch.</p>
+    </div>
+    <div class="links">
+      <div class="linkcol">
+        <span class="geo">MacBook Pro 16" · M4 Max 64GB nano · Space Black · refurb watch</span>
+        <div class="linkgroup">
+          <div class="gl">Set an alert (the reliable way)</div>
+          <ul>
+            <li><a href="https://www.refurb.me/refurbished/macbook/macbook-pro/16-inch/m4-max">RefurbMe — 16" M4 Max</a> → filter 64GB + nano + Space Black, add email alert</li>
+            <li><a href="https://www.apple.com/shop/refurbished/mac/16-inch-macbook-pro-m4-max">Apple refurb — live 16" M4 Max stock</a></li>
+            <li><a href="https://www.apple.com/shop/refurbished/mac/macbook-pro-64gb">Apple refurb — 64GB filter</a></li>
+          </ul>
+        </div>
+        <div class="linkgroup">
+          <div class="gl">Apple refurb part numbers (16", 40-core, nano, Space Black)</div>
+          <ul>
+            <li><span class="mono">64GB / 1TB nano SB</span> — the target; a rotating SKU, so the RefurbMe alert surfaces its live part number when it lands</li>
+            <li><span class="mono">G1FWMLL/A</span> — a nano SB 40-core refurb page; verify it's the 64GB/1TB on-page before buying</li>
+          </ul>
+        </div>
+      </div>
+      <div class="linkcol">
+        <span class="geo">MacBook Pro 16" · M5 Pro 48GB nano · Space Black · BTO</span>
+        <div class="linkgroup">
+          <div class="gl">Configure new (always in stock)</div>
+          <ul>
+            <li><a href="https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-pro-chip-18-core-cpu-20-core-gpu-48gb-memory-1tb-storage">Apple — 16" M5 Pro configurator</a> → keep Memory 48GB, set Display nano-texture, Colour Space Black</li>
+          </ul>
+        </div>
+        <div class="linkgroup">
+          <div class="gl">Model number</div>
+          <ul>
+            <li><span class="mono">MGEC4LL/A</span> — base 48GB / 1TB SB standard; 64GB + nano is a BTO variant of it (no separate retail SKU)</li>
+          </ul>
+        </div>
+        <div class="linkgroup">
+          <div class="gl">Buy it right</div>
+          <ul>
+            <li>Order through their EPP store login, not this public page — same config, employee price</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>Reality on the 64GB nano refurb:</strong> it's the rarest combo — 64GB + nano-texture + Space Black + 40-core, all originally build-to-order. Set the RefurbMe alert and be ready to buy within hours of a ping; these sell fast. If ~2 weeks pass with nothing, that's your signal to pivot to the M5 Pro 48GB BTO (which needs no waiting).</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Prices are indicative for mid-2026, post-hike, and vary by sale/condition/stock — <strong>confirm live before purchase</strong>. Discount figures illustrate EPP ~25% new / ~28% refurb and F&amp;F ~15%; your US contact's portal is the authority on rate, refurb eligibility, region, and limits.</p>
+    <p>Bandwidth: M4 Max <code>546</code> · M5 Pro <code>307</code> GB/s (AI generation scales with this). CPU (Geekbench 6 multi-core, approx): M5 Pro <code>≈29,200</code> · M4 Max <code>≈25,700</code>. Sources: Apple, Best Buy, B&amp;H, Flipkart, Macworld, 9to5Mac, AppleInsider, Notebookcheck, Geekbench.</p>
+  </div>
+</footer>
+</body>
+</html>
